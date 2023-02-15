@@ -65,7 +65,7 @@ const validarInputs = () => {
         
     } else {
         siValido(username);
-        var comprobacion = true;
+        comprobacion = true;
     }
 
     if(emailValue === '') {
@@ -76,7 +76,7 @@ const validarInputs = () => {
         comprobacion = false;
     } else {
         siValido(email);
-        var comprobacion = true;
+        comprobacion = true;
     }
 
     if(passwordValue === '') {
@@ -87,7 +87,7 @@ const validarInputs = () => {
         comprobacion = false;
     } else {
         siValido(password);
-        var comprobacion = true;
+        comprobacion = true;
     }
 
     if(passwordRepeatValue === '') {
@@ -104,12 +104,12 @@ const validarInputs = () => {
 
     } else {
         siValido(passwordRepeat);
-        var comprobacion = true;
+        comprobacion = true;
     }
     if(!comprobacion){
         alert('Por favor, revise el formulario');
     } else {
-        alert('La inscripción ha sido correcta')
+        alert('La inscripción ha sido correcta');
     }    
         
     return comprobacion;
