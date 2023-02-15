@@ -1,0 +1,87 @@
+html {
+    height: 100%;
+    display: table;
+    margin: auto;
+    background-color:rgb(33, 29, 47);
+}
+
+
+h1 {
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif ;
+    font-weight: bold;
+    color: rgb(166, 170, 221);
+}
+
+
+form {
+    background-color: rgb(59, 60, 85);
+    width: 400px;
+    height: 600px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(166, 170, 221) ;
+    border-radius: 10px ;
+    padding: 20px;
+    margin: 20px auto 0 auto;
+}    
+
+.formtext {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif ;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(166, 170, 221);
+}
+
+
+.input-control {
+    display: flex;
+    flex-direction: column;    
+}
+
+.input-control input {
+    border: 2px solid;
+    border-color: rgb(31, 25, 52);
+    height: 30px;
+    border-radius: 5px;
+}
+
+button {
+    width: 350px;  
+    height:50px;
+    background-color: rgb(122, 71, 204);
+    color: rgb(214, 215, 238);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',  Arial, sans-serif;
+    font-size: large;
+    border-radius: 5px;
+    border-color: rgb(37, 27, 46);
+    margin: 20px 0 0 20px;
+ 
+}
+button:hover {
+    background-color:rgb(166, 170, 221);
+    color: rgb(122, 106, 214);
+}
+
+/* Cambios de color e imagenes en los inputs dependiendo de si pasan o no la validación */
+
+.input-control.success input {
+    border-color: rgb(0, 255, 0);
+    background-image: url(images/success-icon.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.input-control.error input {
+    border-color:  rgb(255, 0, 0);
+    background-image: url(images/error-icon.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.error {
+    color: rgb(255, 0, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',  Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}

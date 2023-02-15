@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="español">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear nueva cuenta.</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <form id="form" action="" method="post" onsubmit="return validarInputs()">
+
+        <!-- He decidido cambiar "Create account" por "Crear una cuenta" en español, 
+            ya que el resto de datos estan en español y es el idioma establecido para la pagina web-->
+
+        <h1>Crear una cuenta</h1>
+
+        <!-- Nombre de usuario-->
+        <div class="input-control">
+            <label class="formtext" for="nombre">Nombre:</label>
+            <br>
+            <input type="text" name="nombre" Id="nombre" value="" placeholder="Nombre de usuario"  title="No son validos números o símbolos especiales" >
+            <div class="error"></div>
+        </div>
+        <br>
+         <!-- Email-->
+         <div class="input-control">
+            <label class="formtext" for="email">Email:</label>
+            <br>
+            <input type="email" name="email" Id="email" placeholder="ejemplo@email.es" title="La dirección de correo debe de ser valida" >
+            <div class="error"></div>
+        </div>
+        <br>
+         <!-- Contraseña-->
+         <div class="input-control">
+            <label class="formtext"for="password">Clave:</label>
+            <br>
+            <input type="password" name="password" Id="password" placeholder="Escriba aqui su contraseña"  title="Minimo 8 carácteres" >
+            <div class="error"></div>
+        </div>
+        <br>
+         <!-- Repetir contraseña -->
+         <div class="input-control">
+            <label class="formtext"  for="password_repeat">Confirme su clave:</label>
+            <br>
+            <input type="password" name="password_repeat" Id="password_repeat" placeholder="Repita su contraseña" title="Las contraseñas deben coincidir" >
+            <div class="error"></div>
+        </div>
+        <br>
+        <div>
+            <button class="inputs" type="submit" name="enviar" id="enviar"> ENVIAR </button>
+        </div>
+
+
+    </form>
+</body>
+</html>
