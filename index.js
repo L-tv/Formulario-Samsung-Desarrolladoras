@@ -10,9 +10,6 @@ const passwordRepeat = document.getElementById('password_repeat');
 
 form.addEventListener('submit', e => {
      e.preventDefault();
-
-     validarInputs();
-       
 });
 
 // Creamos las variables de error y exito para la validación de los campos.
@@ -54,49 +51,66 @@ const validarInputs = () => {
     const passwordValue = password.value.trim();
     const passwordRepeatValue = passwordRepeat.value.trim();
 
+    var comprobacion = true;
+
 // Validacion y error de los campos del formulario.
 
     if(usernameValue === '') {
         noValido(username, 'Rellene este campo');
+        comprobacion = false;
         
     } else if (!isValidUsername(usernameValue)) {
         noValido( username, 'No introduzca números');
+        comprobacion = false;
         
     } else {
         siValido(username);
+        var comprobacion = true;
     }
 
     if(emailValue === '') {
         noValido(email, 'Rellene este campo');
+        comprobacion = false;
     } else if (!isValidEmail(emailValue)) {
         noValido(email, 'Email invalido');
+        comprobacion = false;
     } else {
         siValido(email);
+        var comprobacion = true;
     }
 
     if(passwordValue === '') {
         noValido(password, 'Rellene este campo');
-
+        comprobacion = false;
     } else if (passwordValue.length < 8 ) {
         noValido(password, 'La contraseña debe tener al menos 8 carácteres.');
-
+        comprobacion = false;
     } else {
         siValido(password);
+        var comprobacion = true;
     }
 
     if(passwordRepeatValue === '') {
         noValido(passwordRepeat, 'Rellene este campo');
+        comprobacion = false;
 
     } else if (passwordRepeatValue !== passwordValue) {
         noValido(passwordRepeat, "Las contraseñas no coinciden");
+        comprobacion = false;
+
+    } else if (passwordRepeatValue.length < 8 ) {
+        noValido(passwordRepeat, 'La contraseña debe tener al menos 8 carácteres.');
+        comprobacion = false;
+
     } else {
         siValido(passwordRepeat);
+        var comprobacion = true;
     }
-
-    if (usernameValue&&emailValue&&passwordValue&&passwordRepeatValue) {
-    alert ('Su inscripción ha sido realizada con exito');
-    }else {
-    alert ('Por favor, revise el formulario');
-    }
-    
+    if(!comprobacion){
+        alert('Por favor, revise el formulario');
+    } else {
+        alert('La inscripción ha sido correcta')
+    }    
+        
+    return comprobacion;
 };
