@@ -61,7 +61,7 @@ const validarInputs = () => {
         
     } else if (!isValidUsername(usernameValue)) {
         noValido( username, 'No introduzca números');
-        comprobacion = false;
+        return false;
         
     } else {
         siValido(username);
@@ -73,7 +73,7 @@ const validarInputs = () => {
         comprobacion = false;
     } else if (!isValidEmail(emailValue)) {
         noValido(email, 'Email invalido');
-        comprobacion = false;
+        return false;
     } else {
         siValido(email);
         comprobacion = true;
@@ -84,7 +84,7 @@ const validarInputs = () => {
         comprobacion = false;
     } else if (passwordValue.length < 8 ) {
         noValido(password, 'La contraseña debe tener al menos 8 carácteres.');
-        comprobacion = false;
+        return false;
     } else {
         siValido(password);
         comprobacion = true;
@@ -96,7 +96,7 @@ const validarInputs = () => {
 
     } else if (passwordRepeatValue !== passwordValue) {
         noValido(passwordRepeat, "Las contraseñas no coinciden");
-        comprobacion = false;
+        return false;
 
     } else if (passwordRepeatValue.length < 8 ) {
         noValido(passwordRepeat, 'La contraseña debe tener al menos 8 carácteres.');
@@ -106,7 +106,7 @@ const validarInputs = () => {
         siValido(passwordRepeat);
         comprobacion = true;
     }
-    if(!comprobacion){
+    if(!comprobacion) {
         alert('Por favor, revise el formulario');
     } else {
         alert('La inscripción ha sido correcta');
